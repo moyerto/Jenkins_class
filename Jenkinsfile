@@ -4,6 +4,9 @@ pipeline {
   }
   stages {
     stage('Say Hello') {
+      input {
+        message 'Should we continue?'
+      }
       steps {
         echo "Hello ${params.Name}!"
         sh 'java -version'
